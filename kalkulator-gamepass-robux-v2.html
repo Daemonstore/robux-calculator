@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator Gamepass Robux</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .calculator {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 1em;
+      width: 220px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>Kalkulator Harga Gamepass Roblox</h2>
+    <p>Masukkan jumlah Robux yang ingin kamu terima (bersih):</p>
+    <input type="number" id="robuxInput" placeholder="Contoh: 100" />
+    <br/>
+    <button onclick="hitungHargaGamepass()">Hitung</button>
+    <div class="result" id="resultText"></div>
+  </div>
+
+  <script>
+    function hitungHargaGamepass() {
+      const robuxBersih = parseFloat(document.getElementById("robuxInput").value);
+      if (isNaN(robuxBersih) || robuxBersih <= 0) {
+        document.getElementById("resultText").textContent = "Masukkan jumlah Robux yang valid.";
+        return;
+      }
+      const hargaGamepass = robuxBersih / 0.7;
+      document.getElementById("resultText").textContent =
+        `Untuk menerima ${robuxBersih} Robux, Harga gamepass yang harus kamu atur adalah : ${Math.ceil(hargaGamepass)} Robux`;
+    }
+  </script>
+</body>
+</html>
